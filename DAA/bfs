@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int bfs(int n, vector<int>adj[])
+{
+    vector<int>visited(n+1 , 0);     //created a visited vector and marked it as false
+    vector<int>nodes;   //to store traversed nodes
+    for(int i=0;i<n;i++)
+    {
+        if(!visited[i])
+        {
+            queue<int>q;
+            q.push(i);
+            visited[i]=1;
+            while(!q.empty())
+            {
+                int first = q.front();
+                q.pop();
+                nodes.push_back(first);
+                
+                for(auto it : adj[first])
+                {
+                    if(!visited[it])
+                    {
+                        q.push(it);
+                        visited[it] = 1;
+                    }
+                }
+            }
+        }
+    }
+    
+    for(auto element : nodes)
+    {
+        cout<<element<<" ";
+    }
+}
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    
+    vector<int>adj[n+1];
+    
+    for(int i=0;i<m;i++)
+    {
+        int u,v;
+        cin>>u>>v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    
+    bfs(n,adj);
+}
