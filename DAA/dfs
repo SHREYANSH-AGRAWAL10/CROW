@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namepsace std;
+
+void newdfs(int node,vector<int>&vis,vector<int>adj[],vector<int>&store)
+{
+    store.push_back(node);
+    vis[node]=1;
+    for(auto child : adj[node])
+    {
+        if(!vis[child])
+        {
+            newdfs(child,vis,adj,store);
+        }
+    }
+}
+
+void dfs(int n,vector<int>adj[])
+{
+    vector<int>vis[n+1,0];
+    vector<int>store;
+    for(int i=0;i<n;i++)
+    {
+        if(!vis[i])
+        {
+            newdfs(i,vis,adj,store);
+        }
+    }
+    for(auto it:store)
+    {
+        cout<<it<<" ";
+    }
+}
+
+int main()
+{
+    int n,e;
+    cin>>n>>e;
+    vector<int>adj[n+1];
+    for(int i=0;i<e;i++)
+    {
+        int u,v;
+        cin>>u>>v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    dfs(n,adj);
+}
