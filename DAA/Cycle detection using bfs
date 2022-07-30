@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+class sol
+{
+public:
+    bool cycle(int s,int n,vector<int>adj[],vector<int>&visited)
+    {
+        queue<pair<int,int>>q;      //(initial,previous)
+        visited[s] = true;
+        q.push({s,-1});       //for starting node, initial is s and previous is -1
+        while(!q.empty())
+        {
+            int current = q.front().first;
+            int parent = q.front().second;
+            q.pop();
+            
+            for(auto it:adj[current])
+            {
+                if(!visited[it])
+                {
+                    visited[it]=true;
+                    q.push({it,current});
+                }
+                else if(parent!=it)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    bool bfs(int n,vector<int>adj[])
+    {
+        vector<int>vis(n+1,0);
+        for(int i=0;i<=n;i++)
+        {
+            if(!vis[i])
+            {
+                if(cycle(i,n,adj,vis))
+                {
+                    return true;
+                }
+            }
+        }
+    }
+};
+
+int main()
+{
+    int m,n;
+    cin>>m>>n;
+    vector<int>adj[n+1];
+    for(int i=0;i<m;i++)
+    {
+        int u,v;
+        cin>>u>>v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    sol obj;
+    int num = obj.bfs(n,adj);
+    if(num==1)
+    {
+        cout<<"yes";
+    }
+    else
+    {
+        cout<<"no";
+    }
+}
