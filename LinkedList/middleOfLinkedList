@@ -1,0 +1,17 @@
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+
+        //two pointers
+        ListNode* start = head;
+        ListNode* end = head;
+
+        //move start 1 step and end 2 steps
+        while(end && end->next!=NULL)
+        {
+            start = start->next;
+            end = end->next->next;
+        }
+        return start;
+    }
+};
