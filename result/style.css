@@ -1,0 +1,73 @@
+@charset "utf-8";
+body
+{
+	background-image:url(images/Student\ Result\ Management\ system\ Free\ Project\ in\ PHP\ and\ MySQL.jpg);
+	margin:0px;
+}
+.head
+{
+	font-family:"Trebuchet MS";
+	font-size:40px;
+	color:black;
+	margin-left:50px;
+}
+
+.hr
+{
+	width:80%;
+	height:5px;
+	border-radius:100px;
+	background-color:black;
+}
+
+.subhead
+{
+	font-family:"Segoe UI";
+	color:black;
+	font-size:24px;
+	text-decoration:underline;
+}
+
+
+.labels
+{
+	font-family:"Segoe UI";
+	color:black;
+	font-size:16px;
+	font-style:italic;
+}
+
+.fields
+{
+	font-family:"Segoe UI";
+	font-size:14px;
+	padding:2px 5px;
+	color:black;
+	background-color:transparent;
+	border:1px solid black;
+	border-radius:5px;
+}
+.design
+{
+	background-color:transparent;
+	border:1px solid black;
+	border-radius:5px;
+	padding:10px 10px;
+	box-shadow:0px 0px 40px #000000;
+}
+a.link:link{text-decoration:none;font-family:"Trebuchet MS";font-size:14px;color:black;}
+a.link:active{text-decoration:none;font-family:"Trebuchet MS";font-size:14px;color:black;}
+a.link:visited{text-decoration:none;font-family:"Trebuchet MS";font-size:14px;color:black;}
+a.link:hover{text-decoration:none;font-family:"Trebuchet MS";font-size:15px;color:black;}
+
+.msg
+{
+	font-family:"Segoe UI";
+	font-size:14px;
+	color:black;
+}
+
+a.cmd:link{text-decoration:none;font-family:"Trebuchet MS";font-size:15px;color:black;padding:5px 6px;background-color:transparent;border:1px solid #066;}
+a.cmd:active{text-decoration:none;font-family:"Trebuchet MS";font-size:15px;color:black;padding:5px 6px;background-color:transparent;border:1px solid #066;}
+a.cmd:visited{text-decoration:none;font-family:"Trebuchet MS";font-size:15px;color:black;padding:5px 6px;background-color:transparent;border:1px solid #066;}
+a.cmd:hover{text-decoration:none;font-family:"Trebuchet MS";font-size:15px;color:black;padding:5px 6px;background-color:transparent;border:1px solid #066;box-shadow:0px 0px 10px #066;}
